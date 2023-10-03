@@ -50,3 +50,13 @@ streamlit.text(my_data_row)
 #fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
 #streamlit.dataframe(fruityvice_normalized)
+
+           #allow end user to add a fruitto the list
+           def insert_row_snowflake(new_fruit):
+           with my_cnx.curson() as my_cur:
+                      my_cur.execute("insert into fruit_load_list values('"+????+"')")
+                      return "Thanks for adding " + new_fruit
+
+            # add a button to load the fruit
+                      if stramlit.button('Get The fruit list'):
+                      my_cnx=snowflake.connector.connect(**
